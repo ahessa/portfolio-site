@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 function App() {
   return (
     <div className="bg-slate-950 text-white min-h-screen">
@@ -28,15 +30,25 @@ function App() {
       </nav>
 
       {/* Hero */}
-      <section className="h-screen flex items-center">
+      <section className="h-screen flex items-center relative overflow-hidden">
 
-        <div className="max-w-6xl mx-auto px-6">
+        {/* Background Glow */}
+        <div className="absolute w-[500px] h-[500px] bg-cyan-500/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
+
+        <div className="absolute w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full bottom-[-100px] right-[-100px]" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="max-w-6xl mx-auto px-6 relative z-10"
+        >
 
           <p className="text-cyan-400 mb-4 text-lg">
             Hello, I'm
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-black mb-6">
+          <h1 className="text-7xl md:text-9xl font-black mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
             TEE
           </h1>
 
@@ -50,7 +62,7 @@ function App() {
 
             <a
               href="#projects"
-              className="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition"
+              className="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition"
             >
               View Projects
             </a>
@@ -65,7 +77,7 @@ function App() {
 
           </div>
 
-        </div>
+        </motion.div>
 
       </section>
 
@@ -112,14 +124,15 @@ function App() {
               "Web Development"
             ].map((skill) => (
 
-              <div
+              <motion.div
                 key={skill}
-                className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 hover:-translate-y-2 transition"
+                whileHover={{ y: -10 }}
+                className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 transition"
               >
                 <h3 className="text-2xl font-semibold">
                   {skill}
                 </h3>
-              </div>
+              </motion.div>
 
             ))}
 
@@ -143,7 +156,10 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-8">
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 transition">
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 transition"
+            >
 
               <h3 className="text-2xl font-bold mb-4">
                 React Portfolio
@@ -161,9 +177,12 @@ function App() {
                 View Project →
               </a>
 
-            </div>
+            </motion.div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 transition">
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-cyan-400 transition"
+            >
 
               <h3 className="text-2xl font-bold mb-4">
                 Linux Learning Journey
@@ -181,7 +200,7 @@ function App() {
                 View Project →
               </a>
 
-            </div>
+            </motion.div>
 
           </div>
 
