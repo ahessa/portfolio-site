@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #020617;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+}
+
+.hero h1 {
+  font-size: 6rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #94a3b8;
+  margin: 20px 0;
+}
+
+button {
+  width: 180px;
+  padding: 15px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
