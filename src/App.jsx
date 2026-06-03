@@ -97,7 +97,7 @@ function App() {
             I’m transitioning deeper into technology by building projects
             with Linux, Docker, React, GitHub, and modern deployment tools.
             I enjoy troubleshooting systems, learning infrastructure,
-            and creating polished web experiences.
+            and creating polished web experiences. THIS IS A CI  TEST 
           </p>
 
         </div>
