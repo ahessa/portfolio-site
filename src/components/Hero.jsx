@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import { FaGithub } from "react-icons/fa"
+import Aurora from "./Aurora"
 
 function Hero() {
   return (
     <section className="h-screen flex items-center relative overflow-hidden">
+    <Aurora />
 
       {/* Background glow */}
 
@@ -28,7 +30,7 @@ function Hero() {
 
         <p className="text-gray-400 text-xl leading-relaxed max-w-3xl">
 
-          Junior Developer and DevOps enthusiast building
+          Junior Developer and DevOps Ninja🥷🏻 building
           containerized applications with React, Docker,
           Linux, and modern deployment tools while continuously
           expanding my cloud-native skillset.
