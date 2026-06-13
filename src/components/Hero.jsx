@@ -30,7 +30,7 @@ function Hero() {
 
         <p className="text-gray-400 text-xl leading-relaxed max-w-3xl">
 
-          Junior Developer and DevOps Ninja🥷🏻 building
+          Junior Developer and DevOps Wizard 🧙‍♂️ building
           containerized applications with React, Docker,
           Linux, and modern deployment tools while continuously
           expanding my cloud-native skillset.
