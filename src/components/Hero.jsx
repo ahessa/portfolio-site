@@ -1,47 +1,126 @@
 import { motion } from "framer-motion"
-import { FaGithub } from "react-icons/fa"
-import Aurora from "./Aurora"
+import AuroraV2 from "./AuroraV2"
+import TypingText from "./TypingText"
 
 function Hero() {
   return (
-    <section className="h-screen flex items-center relative overflow-hidden">
-    <Aurora />
+    <section className="relative h-screen overflow-hidden flex items-center justify-center">
 
-      {/* Background glow */}
-
-      <div className="absolute w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
-
-      <div className="absolute w-[400px] h-[400px] bg-gray-400/5 blur-[120px] rounded-full bottom-[-100px] right-[-100px]" />
+      <AuroraV2 />
 
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="max-w-7xl mx-auto px-6 relative z-10"
+        initial={{
+          opacity: 0,
+          y: 30
+        }}
+        animate={{
+          opacity: 1,
+          y: 0
+        }}
+        transition={{
+          duration: 1.5
+        }}
+        className="
+        relative
+        z-10
+        flex
+        flex-col
+        items-center
+        text-center
+        px-8
+        "
       >
 
-        <p className="text-gray-400 text-xl mb-5">
-          Hello, I'm
-        </p>
+        {/* Small title */}
 
-        <h1 className="text-7xl md:text-9xl font-black mb-8 bg-gradient-to-r from-white via-gray-300 to-gray-500 text-transparent bg-clip-text">
-          Essa
-        </h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="
+          text-gray-500
+          tracking-[0.5em]
+          uppercase
+          text-sm
+          mb-8
+          "
+        >
+          Software Engineer • DevOps Engineer
+        </motion.p>
 
-        <p className="text-gray-400 text-xl leading-relaxed max-w-3xl">
 
-          Junior Developer and DevOps Wizard 🧙‍♂️ building
-          containerized applications with React, Docker,
-          Linux, and modern deployment tools while continuously
-          expanding my cloud-native skillset.
+        {/* Name */}
 
-        </p>
+        <motion.h1
+          initial={{
+            opacity: 0,
+            scale: 0.95
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1
+          }}
+          transition={{
+            duration: 2
+          }}
+          className="
+          text-[6rem]
+          md:text-[10rem]
+          lg:text-[12rem]
+          font-black
+          leading-none
+          mb-10
+          bg-gradient-to-b
+          from-white
+          via-gray-300
+          to-gray-600
+          text-transparent
+          bg-clip-text
+          "
+        >
+          ESSA
+        </motion.h1>
 
-        <div className="flex flex-wrap gap-5 mt-12">
+
+        {/* Subtitle */}
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="
+          text-gray-400
+          text-xl
+          leading-relaxed
+          max-w-2xl
+          "
+        >
+          Building containerized applications and learning modern
+          cloud-native technologies one project at a time.
+        </motion.p>
+
+
+        {/* Technologies */}
+
+        <TypingText />
+
+
+        {/* Buttons */}
+
+        <div className="flex flex-wrap justify-center gap-5 mt-16">
 
           <a
             href="#projects"
-            className="bg-white text-black px-7 py-4 rounded-2xl font-semibold hover:scale-105 transition duration-300"
+            className="
+            bg-white
+            text-black
+            px-8
+            py-4
+            rounded-2xl
+            font-semibold
+            hover:scale-105
+            transition
+            "
           >
             View Projects
           </a>
@@ -50,17 +129,36 @@ function Hero() {
             href="https://github.com/ahessa"
             target="_blank"
             rel="noreferrer"
-            className="border border-gray-700 px-7 py-4 rounded-2xl hover:border-white hover:text-white transition duration-300"
+            className="
+            border
+            border-gray-700
+            px-8
+            py-4
+            rounded-2xl
+            text-gray-300
+            hover:border-white
+            hover:text-white
+            transition
+            "
           >
             GitHub
-            
           </a>
 
           <a
             href="/Ahmed-Essa-CV.pdf"
             target="_blank"
             rel="noreferrer"
-            className="border border-gray-700 px-7 py-4 rounded-2xl hover:border-white hover:text-white transition duration-300"
+            className="
+            border
+            border-gray-700
+            px-8
+            py-4
+            rounded-2xl
+            text-gray-300
+            hover:border-white
+            hover:text-white
+            transition
+            "
           >
             Download CV
           </a>
