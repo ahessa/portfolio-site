@@ -4,79 +4,190 @@ function About() {
   return (
     <section
       id="about"
-      className="py-32 border-t border-gray-800"
+      className="py-40 border-t border-gray-900"
     >
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto px-6"
-      >
+      <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold mb-12 text-gray-200">
-          About Me
-        </h2>
+        {/* Header */}
 
-        <div className="bg-white/[0.03] border border-gray-800 rounded-3xl p-10">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0
+          }}
+          viewport={{
+            once: true
+          }}
+          transition={{
+            duration: 0.8
+          }}
+        >
 
-          <p className="text-gray-400 text-xl leading-loose">
+          <p className="text-gray-500 uppercase tracking-[0.3em] text-xs sm:text-sm mb-6">
 
-            I love Coding, and making Memories🤘🏻.
-
-            My focus is on Linux systems, containerization,
-            modern web development, and infrastructure technologies.
-
-            I enjoy troubleshooting systems, building practical
-            projects, and understanding how applications move
-            from code to production.
+            About
 
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-20">
 
-            <div className="border border-gray-800 rounded-2xl p-6">
+            Building Things,
+            <br />
+            Learning Systems.
 
-              <h3 className="text-3xl text-white font-bold mb-2">
-                Linux
-              </h3>
+          </h2>
 
-              <p className="text-gray-500">
-                Ubuntu, troubleshooting and administration
-              </p>
+        </motion.div>
+
+
+        {/* Main content */}
+
+        <div className="grid lg:grid-cols-2 gap-20">
+
+          {/* Left side */}
+
+          <motion.div
+
+            initial={{
+              opacity: 0,
+              x: -50
+            }}
+
+            whileInView={{
+              opacity: 1,
+              x: 0
+            }}
+
+            viewport={{
+              once: true
+            }}
+
+            transition={{
+              duration: 1
+            }}
+
+          >
+
+            <p className="text-gray-300 text-lg md:text-xl leading-loose">
+
+              Engineer and DevOps Wizard 🧙🏻‍♂️ in progress. Turning ideas into code with software engineering, DevOps, and practical projects.
+
+              <br />
+              <br />
+
+              My interests revolve around Linux systems,
+              containerization, cloud-native technologies,
+              automation and building practical applications.
+
+              <br />
+              <br />
+
+              I enjoy understanding how software moves from
+              source code to production and the infrastructure
+              that powers modern applications.
+
+            </p>
+
+          </motion.div>
+
+
+          {/* Right side */}
+
+          <motion.div
+
+            initial={{
+              opacity: 0,
+              x: 50
+            }}
+
+            whileInView={{
+              opacity: 1,
+              x: 0
+            }}
+
+            viewport={{
+              once: true
+            }}
+
+            transition={{
+              duration: 1
+            }}
+
+            className="
+            bg-white/[0.03]
+            border
+            border-gray-800
+            rounded-[40px]
+            p-10
+            "
+
+          >
+
+            <div className="space-y-10">
+
+              <div>
+
+                <p className="text-gray-500 mb-3">
+                  Current Focus
+                </p>
+
+                <p className="text-2xl text-white">
+                  Software Engineering & DevOps
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <p className="text-gray-500 mb-3">
+                  Favorite Technologies
+                </p>
+
+                <p className="text-2xl text-white">
+                  Linux • Docker • Kubernetes • React
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <p className="text-gray-500 mb-3">
+                  Philosophy
+                </p>
+
+                <p className="text-2xl text-white">
+                  Learn by Building
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <p className="text-gray-500 mb-3">
+                  Current Mission
+                </p>
+
+                <p className="text-2xl text-white">
+                  Becoming a DevOps Engineer
+                </p>
+
+              </div>
 
             </div>
 
-            <div className="border border-gray-800 rounded-2xl p-6">
-
-              <h3 className="text-3xl text-white font-bold mb-2">
-                Docker
-              </h3>
-
-              <p className="text-gray-500">
-                Containers, Compose and deployment
-              </p>
-
-            </div>
-
-            <div className="border border-gray-800 rounded-2xl p-6">
-
-              <h3 className="text-3xl text-white font-bold mb-2">
-                Helm and Kubernetes
-              </h3>
-
-              <p className="text-gray-500">
-                Containers organization and orchestration
-              </p>
-
-            </div>
-
-          </div>
+          </motion.div>
 
         </div>
 
-      </motion.div>
+      </div>
 
     </section>
   )

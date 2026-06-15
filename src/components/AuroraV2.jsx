@@ -25,7 +25,7 @@ function AuroraV2() {
         h-[180px]
         bg-gradient-to-r
         from-transparent
-        via-white/15
+        via-white/30
         to-transparent
         blur-[100px]
         "
@@ -52,7 +52,7 @@ function AuroraV2() {
         h-[220px]
         bg-gradient-to-r
         from-transparent
-        via-gray-300/15
+        via-gray-200/30
         to-transparent
         blur-[140px]
         "
@@ -79,7 +79,7 @@ function AuroraV2() {
         h-[250px]
         bg-gradient-to-r
         from-transparent
-        via-white/10
+        via-white/20
         to-transparent
         blur-[180px]
         "
@@ -104,8 +104,8 @@ function AuroraV2() {
         w-[900px]
         h-[900px]
         rounded-full
-        bg-white/10
-        blur-[250px]
+        bg-white/20
+        blur-[180px]
         "
       />
 
@@ -128,7 +128,7 @@ function AuroraV2() {
         rotate-12
         bg-gradient-to-r
         from-transparent
-        via-white/[0.03]
+        via-white/[0.08]
         to-transparent
         blur-3xl
         "
@@ -162,7 +162,7 @@ function AuroraV2() {
         absolute
         inset-0
         bg-gradient-to-b
-        from-white/[0.03]
+        from-white/[0.08]
         via-transparent
         to-black
         "

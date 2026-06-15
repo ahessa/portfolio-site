@@ -3,59 +3,80 @@ import { motion } from "framer-motion"
 function Projects() {
 
   const projects = [
+
     {
       title: "Containerized React Portfolio",
-      year: "2026",
+
       description:
-        "Modern portfolio built with React, Tailwind CSS, Docker and Nginx. Deployed automatically with Render using a production multi-stage Docker build.",
+        "A modern portfolio built with React, Tailwind CSS, Framer Motion and Docker. Containerized with a production multi-stage build and deployed automatically through Render.",
+
       technologies: [
         "React",
-        "Tailwind",
+        "Tailwind CSS",
         "Framer Motion",
         "Docker",
         "Nginx",
         "Render"
-      ]
+      ],
+
+      github: "https://github.com/ahessa",
+
+      demo: "https://tee-portfolio-y63l.onrender.com/"
     },
 
     {
       title: "Tourism Website Platform",
-      year: "2026",
+
       description:
-        "Full-stack tourism platform backed by PostgreSQL and Docker Compose. Explored container networking, persistent storage and deployment workflows.",
+        "Full-stack tourism platform backed by PostgreSQL and Docker Compose. Explored persistent storage, container networking and deployment workflows.",
+
       technologies: [
         "PostgreSQL",
         "Docker Compose",
         "Volumes",
         "Networking"
-      ]
+      ],
+
+      github: "#",
+
+      demo: "#"
     },
 
     {
       title: "Linux Administration Lab",
-      year: "2026",
+
       description:
-        "Hands-on Ubuntu environment covering file systems, mounting drives, permissions, networking and troubleshooting.",
+        "Hands-on Ubuntu environment covering permissions, mounting drives, file systems, NTFS repair and troubleshooting.",
+
       technologies: [
-        "Ubuntu",
         "Linux",
+        "Ubuntu",
         "Permissions",
         "Networking"
-      ]
+      ],
+
+      github: "#",
+
+      demo: "#"
     },
 
     {
       title: "Docker & Kubernetes Labs",
-      year: "2025",
+
       description:
-        "Built containers, volumes and networks while exploring deployments, services, ConfigMaps, Secrets and Helm charts.",
+        "Built containers and explored Kubernetes concepts including deployments, services, ConfigMaps, Secrets and Helm charts.",
+
       technologies: [
         "Docker",
         "Kubernetes",
         "Helm",
         "ConfigMaps",
         "Secrets"
-      ]
+      ],
+
+      github: "#",
+
+      demo: "#"
     }
 
   ]
@@ -67,7 +88,9 @@ function Projects() {
       className="py-40 border-t border-gray-900"
     >
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Header */}
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -76,175 +99,190 @@ function Projects() {
           transition={{ duration: 0.8 }}
         >
 
-          <p className="text-gray-500 text-lg mb-4">
-            Selected Work
+          <p className="text-gray-500 uppercase tracking-[0.3em] text-xs sm:text-sm mb-6">
+
+            Projects
+
           </p>
 
-          <h2 className="text-6xl md:text-7xl font-bold text-white mb-24">
-            Projects & Labs
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-24">
+
+            Selected Work.
+
           </h2>
 
         </motion.div>
 
-        <div className="space-y-12">
+        {/* Projects */}
 
-          {projects.map((project, index) => (
+        <div className="space-y-24">
 
-            <motion.div
+          {
 
-              key={project.title}
+            projects.map((project) => (
 
-              initial={{
-                opacity: 0,
-                y: 60
-              }}
+              <motion.div
 
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
+                key={project.title}
 
-              viewport={{
-                once: true
-              }}
+                initial={{
+                  opacity: 0,
+                  y: 60
+                }}
 
-              transition={{
-                duration: 0.8,
-                delay: index * 0.15
-              }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0
+                }}
 
-              whileHover={{
-                y: -8
-              }}
+                viewport={{
+                  once: true
+                }}
 
-              className="
-              relative
-              overflow-hidden
-              rounded-[40px]
-              border border-gray-800
-              bg-white/[0.03]
-              p-12
-              transition
-              duration-500
-              hover:border-gray-600
-              "
+                transition={{
+                  duration: 1
+                }}
 
-            >
+                whileHover={{
+                  y: -8
+                }}
 
-              {/* background glow */}
+                className="
+                rounded-[40px]
+                border
+                border-gray-800
+                bg-white/[0.03]
+                p-8
+                md:p-14
+                "
 
-              <div className="
-              absolute
-              top-0
-              right-0
-              h-60
-              w-60
-              rounded-full
-              bg-white/[0.02]
-              blur-3xl
-              " />
+              >
 
+                <div className="grid lg:grid-cols-2 gap-16">
 
+                  {/* Left */}
 
-              <div className="relative z-10">
+                  <div>
 
-                <div className="flex justify-between items-center mb-8">
+                    <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">
 
-                  <h3 className="text-4xl text-white font-semibold">
-                    {project.title}
-                  </h3>
+                      {project.title}
 
-                  <p className="text-gray-600 text-lg">
-                    {project.year}
-                  </p>
+                    </h3>
 
-                </div>
+                    <p className="text-gray-400 text-lg leading-loose">
 
+                      {project.description}
 
-                <p className="
-                text-gray-400
-                leading-loose
-                text-lg
-                max-w-4xl
-                mb-10
-                ">
-                  {project.description}
-                </p>
+                    </p>
 
+                  </div>
 
-                <div className="
-                flex
-                flex-wrap
-                gap-3
-                mb-10
-                ">
+                  {/* Right */}
 
-                  {project.technologies.map((tech) => (
+                  <div className="flex flex-col justify-between">
 
-                    <div
+                    <div className="flex flex-wrap gap-4">
 
-                      key={tech}
+                      {
 
-                      className="
-                      px-5
-                      py-2
-                      rounded-full
-                      border
-                      border-gray-700
-                      text-gray-300
-                      bg-black
-                      hover:border-gray-500
-                      transition
-                      "
+                        project.technologies.map((tech) => (
 
-                    >
+                          <div
 
-                      {tech}
+                            key={tech}
+
+                            className="
+                            px-5
+                            py-3
+                            rounded-2xl
+                            bg-black
+                            border
+                            border-gray-800
+                            text-gray-300
+                            hover:border-gray-500
+                            hover:text-white
+                            transition
+                            "
+
+                          >
+
+                            {tech}
+
+                          </div>
+
+                        ))
+
+                      }
 
                     </div>
 
-                  ))}
+                    <div className="flex flex-col sm:flex-row gap-5 mt-12">
+
+                      <a
+
+                        href={project.github}
+
+                        target="_blank"
+
+                        rel="noreferrer"
+
+                        className="
+                        border
+                        border-gray-700
+                        px-7
+                        py-4
+                        rounded-2xl
+                        text-gray-300
+                        hover:border-white
+                        hover:text-white
+                        transition
+                        text-center
+                        "
+
+                      >
+
+                        GitHub
+
+                      </a>
+
+                      <a
+
+                        href={project.demo}
+
+                        target="_blank"
+
+                        rel="noreferrer"
+
+                        className="
+                        bg-white
+                        text-black
+                        px-7
+                        py-4
+                        rounded-2xl
+                        font-semibold
+                        hover:scale-105
+                        transition
+                        text-center
+                        "
+
+                      >
+
+                        Live Demo
+
+                      </a>
+
+                    </div>
+
+                  </div>
 
                 </div>
 
+              </motion.div>
 
-                <div className="flex gap-5">
+            ))
 
-                  <button className="
-                  border
-                  border-gray-700
-                  px-6
-                  py-3
-                  rounded-2xl
-                  text-gray-300
-                  hover:border-white
-                  hover:text-white
-                  transition
-                  ">
-                    GitHub
-                  </button>
-
-
-                  <button className="
-                  bg-white
-                  text-black
-                  px-6
-                  py-3
-                  rounded-2xl
-                  font-semibold
-                  hover:scale-105
-                  transition
-                  ">
-                    Live Demo
-                  </button>
-
-                </div>
-
-              </div>
-
-            </motion.div>
-
-          ))}
+          }
 
         </div>
 

@@ -1,38 +1,61 @@
 import { motion } from "framer-motion"
 
 function Skills() {
-
-  const categories = [
+  const sections = [
     {
       title: "Operating Systems",
-      skills: [
+      items: [
         "Linux (Ubuntu)",
         "Linux Administration",
         "File Systems",
         "Permissions",
+        "Mounting Drives",
         "Troubleshooting",
-        "Networking Fundamentals"
+        "Networking Fundamentals",
+        "Terminal Workflows"
       ]
     },
 
     {
       title: "Containers & Orchestration",
-      skills: [
+      items: [
         "Docker",
         "Docker Compose",
         "Docker Hub",
-        "Kubernetes",
-        "Helm",
-        "Container Networking",
+        "Multi-stage Docker Builds",
+        "Volumes",
         "Persistent Volumes",
+        "Container Networking",
+        "Kubernetes",
+        "kubectl",
+        "Helm",
         "ConfigMaps",
         "Secrets"
       ]
     },
 
     {
+      title: "Kubernetes Concepts",
+      items: [
+        "Pods",
+        "Deployments",
+        "ReplicaSets",
+        "Services",
+        "Namespaces",
+        "Scaling",
+        "Self-Healing",
+        "Rolling Updates",
+        "Rollbacks",
+        "Liveness Probes",
+        "Readiness Probes",
+        "Resource Limits",
+        "Helm Charts"
+      ]
+    },
+
+    {
       title: "Frontend Development",
-      skills: [
+      items: [
         "HTML5",
         "CSS3",
         "JavaScript",
@@ -45,15 +68,15 @@ function Skills() {
 
     {
       title: "Backend & Databases",
-      skills: [
+      items: [
         "PostgreSQL",
         "REST APIs"
       ]
     },
 
     {
-      title: "DevOps & Automation",
-      skills: [
+      title: "Version Control & CI/CD",
+      items: [
         "Git",
         "GitHub",
         "GitHub Actions",
@@ -63,11 +86,29 @@ function Skills() {
     },
 
     {
-      title: "Web Servers & Deployment",
-      skills: [
+      title: "Infrastructure & Automation",
+      items: [
+        "Terraform",
+        "Ansible",
+        "Jenkins"
+      ]
+    },
+
+    {
+      title: "Cloud & Monitoring",
+      items: [
+        "AWS",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+
+    {
+      title: "Deployment & Web Servers",
+      items: [
         "Nginx",
         "Render",
-        "Multi-stage Docker Builds"
+        "Production Deployments"
       ]
     }
   ]
@@ -75,75 +116,88 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-32 border-t border-gray-800"
+      className="py-40 border-t border-gray-900"
     >
-
       <div className="max-w-7xl mx-auto px-6">
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+        {/* Header */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-16 text-gray-200"
         >
-          Skills & Technologies
-        </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+          <p className="text-gray-500 uppercase tracking-[0.3em] text-xs sm:text-sm mb-6">
+            Skills
+          </p>
 
-          {categories.map((category, index) => (
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-24">
+            Technologies I Build With.
+          </h2>
+
+        </motion.div>
+
+        {/* Categories */}
+
+        <div className="space-y-24">
+
+          {sections.map((section) => (
 
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 40 }}
+              key={section.title}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1
-              }}
-              whileHover={{
-                y: -10
-              }}
-              className="
-              bg-white/[0.03]
-              border border-gray-800
-              rounded-3xl
-              p-8
-              hover:border-gray-500
-              transition
-              duration-300
-              "
+              transition={{ duration: 0.8 }}
+              className="border-b border-gray-800 pb-16"
             >
 
-              <h3 className="text-3xl text-white mb-8">
-                {category.title}
-              </h3>
+              <div className="grid lg:grid-cols-2 gap-12">
 
-              <div className="flex flex-wrap gap-3">
+                {/* Left */}
 
-                {category.skills.map((skill) => (
+                <div>
 
-                  <div
-                    key={skill}
-                    className="
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-black
-                    border
-                    border-gray-700
-                    text-gray-300
-                    hover:border-gray-400
-                    hover:text-white
-                    transition
-                    "
-                  >
-                    {skill}
-                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    {section.title}
+                  </h3>
 
-                ))}
+                </div>
+
+                {/* Right */}
+
+                <div className="flex flex-wrap gap-4">
+
+                  {section.items.map((item) => (
+
+                    <motion.div
+                      key={item}
+                      whileHover={{
+                        y: -5
+                      }}
+                      className="
+                      px-5
+                      py-3
+                      rounded-2xl
+                      bg-white/[0.03]
+                      border
+                      border-gray-800
+                      text-gray-300
+                      hover:border-gray-500
+                      hover:text-white
+                      transition
+                      "
+                    >
+
+                      {item}
+
+                    </motion.div>
+
+                  ))}
+
+                </div>
 
               </div>
 
@@ -154,7 +208,6 @@ function Skills() {
         </div>
 
       </div>
-
     </section>
   )
 }

@@ -1,37 +1,47 @@
 import { motion } from "framer-motion"
 
 function Contact() {
+
+  const commands = [
+
+    {
+      command: "$ whoami",
+      output: "Ahmed Essa"
+    },
+
+    {
+      command: "$ current_focus",
+      output: "Software Engineering & DevOps"
+    },
+
+    {
+      command: "$ favorite_tools",
+      output: "Linux • Docker • Kubernetes • React"
+    },
+
+    {
+      command: "$ status",
+      output: "Building projects every day."
+    }
+
+  ]
+
   return (
+
     <section
       id="contact"
       className="py-40 border-t border-gray-900"
     >
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6">
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-
-          <p className="text-gray-500 text-lg mb-4">
-            Get In Touch
-          </p>
-
-          <h2 className="text-6xl md:text-7xl font-bold text-white mb-24">
-            Contact
-          </h2>
-
-        </motion.div>
-
+        {/* Header */}
 
         <motion.div
 
           initial={{
             opacity: 0,
-            y: 50
+            y: 40
           }}
 
           whileInView={{
@@ -47,6 +57,45 @@ function Contact() {
             duration: 0.8
           }}
 
+        >
+
+          <p className="text-gray-500 uppercase tracking-[0.3em] text-xs sm:text-sm mb-6">
+
+            Contact
+
+          </p>
+
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-24">
+
+            Let's Connect.
+
+          </h2>
+
+        </motion.div>
+
+
+        {/* Terminal */}
+
+        <motion.div
+
+          initial={{
+            opacity: 0,
+            y: 60
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0
+          }}
+
+          viewport={{
+            once: true
+          }}
+
+          transition={{
+            duration: 1
+          }}
+
           className="
           rounded-[40px]
           border
@@ -57,75 +106,137 @@ function Contact() {
 
         >
 
-          {/* terminal bar */}
+          {/* Top Bar */}
 
-          <div className="
-          flex
-          items-center
-          gap-3
-          px-8
-          py-5
-          border-b
-          border-gray-800
-          ">
+          <div className="border-b border-gray-800 px-8 py-5 flex gap-3">
 
-            <div className="w-3 h-3 rounded-full bg-gray-600" />
-            <div className="w-3 h-3 rounded-full bg-gray-500" />
-            <div className="w-3 h-3 rounded-full bg-gray-400" />
+            <div className="w-3 h-3 rounded-full bg-gray-500"></div>
 
-            <p className="ml-6 text-gray-500">
-              terminal
-            </p>
+            <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+
+            <div className="w-3 h-3 rounded-full bg-gray-500"></div>
 
           </div>
 
 
-          {/* terminal content */}
+          {/* Terminal Body */}
 
-          <div className="p-12 space-y-8 text-xl">
+          <div className="p-8 md:p-14 space-y-12">
 
-            <div>
+            {
 
-              <p className="text-gray-500">$ whoami</p>
+              commands.map((item) => (
 
-              <p className="text-white mt-3">
-                Ahmed Essa
-              </p>
+                <div key={item.command}>
 
-            </div>
+                  <p className="text-white text-xl mb-4">
 
+                    {item.command}
 
-            <div>
+                  </p>
 
-              <p className="text-gray-500">$ current_focus</p>
+                  <p className="text-gray-400 text-lg leading-relaxed">
 
-              <p className="text-white mt-3">
-                Software Engineering
-                <br />
-                DevOps Engineering
-              </p>
+                    {item.output}
 
-            </div>
+                  </p>
 
+                </div>
 
-            <div>
+              ))
 
-              <p className="text-gray-500">$ technologies</p>
+            }
 
-              <p className="text-white mt-3">
-                Linux Docker Kubernetes React PostgreSQL Git
-              </p>
+            {/* Cursor */}
+
+            <div className="text-white text-2xl animate-pulse">
+
+              █
 
             </div>
 
 
-            <div>
+            {/* Buttons */}
 
-              <p className="text-gray-500">$ status</p>
+            <div className="flex flex-col sm:flex-row gap-5 pt-8">
 
-              <p className="text-white mt-3">
-                Building projects every day.
-              </p>
+              <a
+
+		  href="https://github.com/ahessa"
+
+		  target="_blank"
+
+		  rel="noreferrer"
+
+		  className="
+		  border
+		  border-gray-700
+		  px-7
+		  py-4
+		  rounded-2xl
+		  text-gray-300
+		  hover:border-white
+		  hover:text-white
+		  transition
+		  text-center
+		  "
+
+		>
+
+		  GitHub
+
+		</a>
+
+
+		<a
+
+		  href="https://www.linkedin.com/in/ahmedessa3/"
+
+		  target="_blank"
+
+		  rel="noreferrer"
+
+		  className="
+		  border
+		  border-gray-700
+		  px-7
+		  py-4
+		  rounded-2xl
+		  text-gray-300
+		  hover:border-white
+		  hover:text-white
+		  transition
+		  text-center
+		  "
+
+		>
+
+		  LinkedIn
+
+		</a>
+
+
+		<a
+
+		  href="mailto:your@email.com"
+
+		  className="
+		  bg-white
+		  text-black
+		  px-7
+		  py-4
+		  rounded-2xl
+		  font-semibold
+		  hover:scale-105
+		  transition
+		  text-center
+		  "
+
+		>
+
+		  Email Me
+
+		</a>
 
             </div>
 
@@ -133,73 +244,12 @@ function Contact() {
 
         </motion.div>
 
-
-        {/* buttons */}
-
-        <div className="flex flex-wrap gap-6 mt-16">
-
-          <a
-            href="https://github.com/ahessa"
-            target="_blank"
-            rel="noreferrer"
-            className="
-            border
-            border-gray-700
-            px-8
-            py-4
-            rounded-2xl
-            text-gray-300
-            hover:border-white
-            hover:text-white
-            transition
-            "
-          >
-            GitHub
-          </a>
-
-
-          <a
-            href="mailto:a.essa3@hotmail.com"
-            className="
-            border
-            border-gray-700
-            px-8
-            py-4
-            rounded-2xl
-            text-gray-300
-            hover:border-white
-            hover:text-white
-            transition
-            "
-          >
-            Email
-          </a>
-
-
-          <a
-            href="/Ahmed-Essa-CV.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="
-            bg-white
-            text-black
-            px-8
-            py-4
-            rounded-2xl
-            font-semibold
-            hover:scale-105
-            transition
-            "
-          >
-            Download CV
-          </a>
-
-        </div>
-
       </div>
 
     </section>
+
   )
+
 }
 
 export default Contact
