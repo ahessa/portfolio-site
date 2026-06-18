@@ -13,7 +13,7 @@ function Navbar() {
         {/* Logo */}
 
         <h1 className="text-2xl font-bold text-gray-200 tracking-wide">
-          TEE
+          AE
         </h1>
 
         {/* Desktop menu */}
